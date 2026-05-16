@@ -6,12 +6,12 @@ import time
 
 # scrapping data from flipkart into html for range of pages
 driver = webdriver.Chrome()
-query = "asus"
+query = "smartphone"
 file = 0
 for i in range (1,5):
-    driver.get(f"https://www.flipkart.com/search?q={query}&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page={i}")
+    driver.get(f"https://www.amazon.in/s?k={query}&page={i}&xpid=pST4cKT0qA0zB&crid=2YSYTPZGCXSMO&qid=1778950601&sprefix=d%2Caps%2C623&ref=sr_pg_2")
 
-    elems = driver.find_elements(By.CLASS_NAME,"jIjQ8S")
+    elems = driver.find_elements(By.CLASS_NAME,"puis-card-container")
     print(f"{len(elems)} items found")
 
     for elem in elems:
